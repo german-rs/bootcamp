@@ -1,1 +1,2 @@
-# bootcamp
+# Bootcamp
+## Algunos ejercicios de JavaScript
