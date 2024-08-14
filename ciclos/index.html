@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos</title>
+</head>
+
+<body>
+    <script>
+        //Factorial.
+
+        for (let i = 1; i <= 10; i++) {
+            //debugger;
+            let resultado = 1;
+
+            for (let j = 1; j <= i; j++) {
+                resultado = resultado * j;
+            }
+
+            //console.log("indice: " + i + ": " + resultado);
+        }
+        // console.log("Final: " + resultado);
+
+
+        // Listas de frutas 
+        const listaFrutasA = [
+            "manzana", "banana", "pera", "naranja","uva", "mango", 
+            "piña", "fresa", "sandía", "melón"
+        ];
+
+        const listaFrutasB = [
+            "limón", "cereza", "pera", "kiwi","banana", "durazno", 
+            "piña", "mango", "manzana", "papaya"
+        ];
+
+        for (let i = 0; i < listaFrutasA.length; i++) {
+            let frutaA = listaFrutasA[i];
+
+            for (let j = 0; j < listaFrutasB.length; j++) {
+                let frutaB = listaFrutasB[j];
+
+                if (frutaA == frutaB) {
+                    console.log("Fruta encontrada: " + frutaA);
+                } else {
+                    console.log(`No coincide: ${frutaA} y ${frutaB}`);
+                }
+            }
+        }
+
+        //Crea un funcion para determinar fibonacci.
+
+        function fibonacci(n) {
+            let a = 0, b = 1, temp;
+            for (let i = 0; i < n; i++) {
+                console.log(a);
+                temp = a + b;
+                a = b;
+                b = temp;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
