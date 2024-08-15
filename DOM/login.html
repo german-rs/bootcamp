@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+   <div>
+      <form id="formulario" name="formulario">    
+         <div>
+           <label for="email">Email</label>
+           <input class="email" type="email" >
+         </div>
+         <div>
+           <label for="password">Contraseña</label>
+           <input class="password" type="password" >
+         </div>
+         <button type="submit" >Ingresar</button>
+      </form>
+   </div>
+   <div>
+      <p class="resultado"></p>
+   </div> 
+   <script>
+        let form = document.getElementById("formulario");
+        form.addEventListener("submit", login);
+
+        function login(event){
+            event.preventDefault();
+            let email = document.querySelector(".email").value;
+            let pass = document.querySelector(".password").value;
+            let result = document.querySelector(".resultado").innerHTML = `Bienvenido ${email}`;
+        }
+   </script>
+</body>
+</html>

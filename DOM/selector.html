@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div class="menu">
+            <ul>
+                <li class="item">Item 1</li>
+                <li class="item">Item 2</li>
+                <li class="item">Item 3</li>
+            </ul>
+
+        </div>
+    </div>
+    <script>
+        let idContenedor = document.getElementById("contenedor");
+        console.log(idContenedor);
+
+        let elementoUl = document.getElementsByTagName("ul");
+        console.log(elementoUl);
+
+        let menuClase = document.getElementsByClassName("menu");
+        console.log(menuClase);
+
+        let items = document.querySelectorAll("body");
+        console.log(items);
+    </script>
+</body>
+
+</html>
