@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+   <label for="animal">Buscador de razas de Perros y gatos</label>
+   <input type="text" class="animal" placeholder="Ingresa el texto aquí">
+   <input type="button" id="buscar" value="Buscar">      
+   <script>
+      let buscar = document.getElementById("buscar");
+      buscar.addEventListener("click", validar);
+
+      function validar(){
+         let animal = document.querySelector(".animal").value;
+         let patron1 = /perro/i;
+         let patron2 = /gato/i;
+
+         if(animal.match(patron1) || animal.match(patron2)){
+            alert("palabra ingresada permitida.");
+         }else{
+            alert("Palabra no permitida");
+         }
+      }
+   </script>
+</body>
+</html>

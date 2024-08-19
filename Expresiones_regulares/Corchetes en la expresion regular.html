@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <label for="lugar">Ingresa tu dirección: </label>
+   <input type="text" class="lugar" placeholder="Ingresa la dirección">
+   <input type="button" id="enviar" value="Enviar">    
+   <script>
+    let enviar = document.getElementById("enviar");
+    enviar.addEventListener("click", validar);
+
+    function validar(){
+      let lugar = document.querySelector(".lugar").value;
+      let permitido = /^[a-zA-Z]+$/;
+
+      if(lugar.match(permitido)){
+        alert("El texto ingresado es permitido.");
+        
+      }else{
+        alert("El texto ingresado NO es permitido.");
+      }
+    }
+   </script>
+</body>
+</html>

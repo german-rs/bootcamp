@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+   <form action="#" name="form" id="form">
+    	<div>
+          <label for="">Nombre</label>
+          <input type="text" class="textNombre">
+          <span class="errorNombre"></span>
+    	</div>
+    	<div>
+          <label for="">Teléfono</label>
+          <input type="text" class="textTelefono">
+          <span class="errorTelefono"></span>
+    	</div>
+      	<div>
+          <label for="">Email</label>
+          <input type="text" class="textEmail">
+          <span class="errorEmail"></span>
+    	</div>
+    	<button type="submit">Enviar</button>
+    	<p class="resultado"></p>
+   </form> 
+   <script>
+      let form = document.getElementById("form");
+      form.addEventListener("submit", function(event){
+            event.preventDefault();
+            limpiarErrores();
+            let textNombre = document.querySelector(".textNombre").value;
+            let textTelefono = document.querySelector(".textTelefono").value;
+            let textEmail = document.querySelector(".textEmail").value;
+
+            let resultado = validar(textNombre,textTelefono,textEmail);
+
+            if(resultado == true){
+                  exito();
+            }
+      });
+
+      function limpiarErrores(){
+            document.querySelector(".errorNombre").innerHTML = "";
+            document.querySelector(".errorTelefono").innerHTML = "";
+            document.querySelector(".errorEmail").innerHTML = "";
+            document.querySelector(".resultado").innerHTML = "";
+      }
+
+
+      function exito(){
+            document.querySelector(".resultado").innerHTML = "Formulario validado con éxito!";
+      }
+
+
+      function validar(nombre, telefono, email){
+            let pasamosLaValidacion = true;
+            let validacionNombre = /[a-zA-Z]/gim;
+
+            if(validacionNombre.test(nombre) == false){
+                  document.querySelector(".errorNombre").innerHTML = "Ingrese un nombre válido!";
+                  pasamosLaValidacion == false;
+            }
+
+            let validacionTelefono = /\d/gim;
+            //[0-9] == \d solo digitos.
+
+            if(validacionTelefono.test(telefono) == false){
+                  document.querySelector(".errorTelefono").innerHTML = "Ingrese un teléfono válido!";
+                  pasamosLaValidacion == false;
+            }
+
+
+            let validacionEmail = /[A-Z0-9._%+-]+@[A-Z0-9-]+.[A-Z]/gim;
+
+            if(validacionEmail.test(email) == false){
+                  document.querySelector(".errorEmail").innerHTML = "Ingrese un email válido!";
+                  pasamosLaValidacion == false;
+            }
+
+            return pasamosLaValidacion;
+      }
+
+   </script>
+</body>
+</html>
