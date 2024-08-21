@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let persona =
+        {
+            nombre: 'Marcelo Salas',
+            edad: 11,
+            saludar: () => { return "Buena matador!"; }
+        };
+
+        //Muestra las claves del objeto.
+        for (let clave in persona) {
+            console.log(clave);
+        }
+
+
+        /**
+         * 
+         * Keys - Values - Entries
+         * 
+        */
+        let perro = {
+            propietario:
+            {
+                nombre: 'Juan', edad: 34, lugar:
+                    { pais: 'Chile', ciudad: 'Santiago de Chile' },
+            },
+            raza: 'Pastor Alemán',
+            origen: 'Alemania',
+            pelaje: 'Lanudo',
+            peso: '30kg',
+            edad: 11,
+            amigable: true,
+        };
+
+        //Muestra las claves del objeto.
+        let keys = Object.keys(perro);
+        console.log(keys);
+
+        //Muestra los valores del objeto.
+        let values = Object.values(perro);
+        console.log(values);
+
+        //Muestra los pares ordenados.
+        let entries = Object.entries(perro);
+        console.log(entries);
+    </script>
+</body>
+
+</html>

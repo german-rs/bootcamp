@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+            Declarando Arrays.
+        */
+
+        let peliculas = ["Ouija", "El conjuro", "Saw", "Espejos", "Star Wars"];
+        console.log(peliculas);
+
+        let peliculasAnimadas = new Array("Sherk", "Toy Story", "Fronzen");
+        console.log(peliculasAnimadas);
+
+        let peliculasRomance = Array("Con todo menos contigo", "Titanic", "Orgullo y prejuicio");
+        console.log(peliculasRomance);
+
+        let peliculasAccion = [];
+        console.log(peliculasAccion);
+
+
+        /*
+            Ejercicio guiado.
+        */
+
+        let datosPersonales = [
+            "Nombre",
+            "Apellido",
+            { edad: 40, nacimiento: 1983 },
+            false
+        ]
+        console.log(datosPersonales);
+
+        /*
+            Referenciando.
+        */
+
+        let programaWeb = [
+            "JavaScript",
+            "React",
+            "Vue",
+            "Angular",
+            { backEnd: "NodeJS" }
+        ];
+        console.log(programaWeb[2]);
+        console.log(programaWeb[4]);
+
+
+        /*
+            Arrays multidimensional.
+        */
+
+        let matriz3x3 = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ]
+        console.log(matriz3x3);
+
+
+        /*
+            Length
+        */
+
+        let instrumentosMusicales = [
+            "Guitarra", "Bajo", "Piano", "Batería"
+        ];
+        console.log(instrumentosMusicales);
+        console.log(instrumentosMusicales.length);
+
+        instrumentosMusicales.length = 2;
+        console.log(instrumentosMusicales);
+        console.log(instrumentosMusicales.length);
+
+        instrumentosMusicales[6] = "Violín";
+        instrumentosMusicales[7] = "Guitarra eléctrica";
+        console.log(instrumentosMusicales);
+        console.log(instrumentosMusicales.length);
+
+        console.log(instrumentosMusicales[2]);
+
+        /*
+            Recorriendo un array.
+        */
+
+        var usuarios = [ 
+            'Manuel', 
+            {nombre: 'Juan',edad: 34}, 30, 
+            {nombre: 'Rodrigo',edad: 55}, true, 
+            {nombre: 'Paola',edad: 34}, 'Pedro', 
+            ['Maria','Eliana'] 
+        ];
+
+        for(let i = 0; i < usuarios.length; i++){
+            console.log(usuarios[i]);
+        }
+
+        //For... of... -> muestra el valor.
+        for(let user of usuarios){
+            console.log(user);
+        }
+
+        //For... in... -> muestra los indices.
+        for(let us in usuarios){
+            console.log(us);
+        }
+    </script>
+</body>
+
+</html>

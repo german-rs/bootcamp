@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * Objetos.
+        */
+
+        let perro = {
+            raza: 'Pastor Alemán',
+            origen: 'Alemania',
+            pelaje: 'Lanudo',
+            peso: '33kg',
+            edad: 12,
+            amigable: true,
+            sonidos: function () { console.log('El perro ladra'); }
+        };
+
+        console.log(perro.raza);
+        console.log(perro.peso);
+        console.log(perro.amigable);
+        perro.sonidos();
+
+        console.log(perro['origen']);
+        console.log(perro['pelaje']);
+        console.log(perro['edad']);
+        perro["sonidos"]();
+
+        //Asignando nuevos valores.
+        perro.peso = '12kg';
+        perro.edad = 2;
+        perro.amigable = false;
+
+        console.log(perro);
+
+
+        /**
+         * Espacio de nombres.
+        */
+
+        let otroPerro = {
+            propietario: {
+                nombre: 'Juan',
+                edad: 34,
+                lugar:
+                    { pais: 'Chile', ciudad: 'Santiago de Chile' },
+            },
+            raza: 'Pastor Alemán',
+            origen: 'Alemania',
+            pelaje: 'Lanudo',
+            peso: '30kg',
+            edad: 11,
+            amigable: true,
+            sonidos: function () { console.log('El perro ladra'); },
+            datos: function () {
+                console.log(`la raza del perro es: ${this.raza} tiene 
+                una edad de ${this.edad} y el propietario se 
+                llama ${this.propietario.nombre}`);
+            }
+        };
+
+        console.log(otroPerro.propietario.nombre);
+        console.log(otroPerro.propietario.lugar.pais);
+        otroPerro.datos();
+
+    </script>
+</body>
+
+</html>
