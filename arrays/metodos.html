@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Sort.
+        let numeros = [1, 5, 20, 23];
+        console.log(numeros.sort());
+
+        //Reverse.
+        let pokemon = ["charizard", "Charmeleon", "Pikachu", "Charmander"];
+        console.log(pokemon.reverse());
+
+
+        //Foreach.
+        let clientes = [ 
+            {nombre: 'Juan', edad: 28}, 
+            {nombre: 'Carlos', edad: 22}, 
+            {nombre: 'Karla', edad: 27}, 
+        ];
+
+        clientes.forEach(function(cliente){
+            console.log(`Nombre: ${cliente.nombre} y edad ${cliente.edad}`);
+        });
+
+
+        //find.
+        var productos = [ 
+            {nombre: 'coca-cola', precio: 990}, 
+            {nombre: 'papas fritas', precio: 590}, 
+            {nombre: 'ramitas', precio: 290}, 
+            {nombre: 'kapo', precio: 190}, 
+        ];
+
+        //Buscar kapo
+        let busqueda = productos.find(function(producto){
+            return producto.nombre == "kapo";
+        });
+
+
+        //FindIndex.
+        var otrosProductos = [ 
+            {nombre: 'coca-cola', precio: 990}, 
+            {nombre: 'papas fritas', precio: 590}, 
+            {nombre: 'ramitas', precio: 290}, 
+            {nombre: 'kapo', precio: 190}, 
+        ];
+
+        let ramitasIndice = otrosProductos.findIndex(function(otroProducto){
+            return otroProducto.nombre == "ramitas";
+        });
+        console.log(ramitasIndice);
+
+
+
+
+        //some
+        let num = [1, 2, 3, 4, 5, 6, 7];
+        let numMenorTres = num.some(
+            function(num){
+                return num < 3;
+            }
+        );
+        console.log(numMenorTres);
+    </script>
+</body>
+</html>

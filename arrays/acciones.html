@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Push.
+        var autos = [
+            { auto: "Peugeot", color: "rojo" },
+            { auto: "Mazda", color: "azul" },
+            { auto: "BMW", color: "negro" }
+        ];
+        autos.push({ auto: "Suzuki", color: "verde" }, { auto: "Chevrolet", color: "Amarillo" });
+        console.log(autos);
+
+        autos.pop();
+        console.log(autos);
+
+
+        //Pop.
+        let libros = [
+            { titulo: "Harry Potter", pag: "300" },
+            { titulo: "El principito", pag: "100" },
+            { titulo: "De animales a dioses", pag: "350" }
+        ];
+        libros.pop(); //Elimina el último.
+        console.log(libros);
+
+
+        //Shift.
+        let otrosLibros = [
+            { titulo: "Harry Potter", pag: "300" },
+            { titulo: "El principito", pag: "100" },
+            { titulo: "De animales a dioses", pag: "350" }
+        ];
+        otrosLibros.shift();//Elimina el primero.
+        console.log(otrosLibros);
+
+        //Split.
+        let filtros = "Comida China RM Ñuñoa";
+        filtros = filtros.split(" ");
+        console.log(filtros);
+
+        //Join.
+        var dirección = ["Rebeca Matte 18", "Santiago"];
+        console.log(dirección.join(","));
+
+        //Map.
+        var clientes = [
+            { nombre: 'Juan', edad: 28 },
+            { nombre: 'Carlos', edad: 17 },
+            { nombre: 'Karla', edad: 27 },
+        ];
+        let clientesModificados = clientes.map(
+            function (cliente) {
+                if (cliente.edad >= 18) {
+                    cliente.adulto = true;
+                } else {
+                    cliente.adulto = false;
+                }
+
+                return cliente;
+            }
+        );
+        console.log(clientesModificados);
+
+
+        //Reduce.
+        let deudas = [10000, 50000, 35000, 55000];
+        let total = deudas.reduce(function (contador, deuda) {
+            return contador + deuda;
+        });
+        console.log(total);
+
+        var clientes = [
+            {nombre:'Juan', edad: 28}, 
+            {nombre:'Carlos', edad: 17}, 
+            {nombre: 'Karla', edad: 27}
+        ];
+        var nombres =
+            clientes.reduce(function (acumulador, cliente) {
+                return acumulador + '|' + cliente.nombre;
+            }, '');
+        console.log(nombres);
+
+
+        //Filter.
+        var otrosClientes = [
+            {nombre:'Juan', edad: 28}, 
+            {nombre:'Carlos', edad: 17}, 
+            {nombre: 'Karla', edad: 27}
+        ];
+        let adultos = clientes.filter(function(otroCliente){
+            return otroCliente.edad >= 18;
+        });
+        console.log(adultos);
+
+
+        var experiencias = [ 
+            { titulo: "Practica", anios: 1, }, 
+            { titulo: "Programador Junior", anios: 2, }, 
+            { titulo: "Programador Senior", anios: 4, }, 
+            { titulo: "Jefe de proyecto", anios: 5, } 
+        ];
+
+        let filtro = experiencias.filter(function(experiencia){
+            return experiencia.anios > 2;
+        });
+        console.log(filtro);
+
+
+        //Concat.
+        var autosCompactos = [ 
+            {marca: 'Toyota', modelo: 'Corolla', combustible: 'Gasolina'}, 
+            {marca: 'Mazda', modelo: '3', combustible: 'Gasolina'}, 
+            {marca: 'Honda', modelo: 'Civic', combustible: 'Gasolina'},
+            {marca: 'Bmw', modelo: '116d', combustible: 'Diesel'}, 
+        ]; 
+        
+        var autosDeportivos = [ 
+            {marca: 'Opel', modelo: 'Astra OPC', combustible: 'Gasolina'}, 
+            {marca: 'Renault', modelo: 'Megane RS', combustible: 'Gasolina'}, 
+            {marca: 'Mitsubishi', modelo: 'Lancer Evo', combustible: 'Gasolina'}, 
+        ];
+
+        let automoviles = autosCompactos.concat(autosDeportivos);
+        console.log(autos); 
+
+
+        var letrasA = ["a","b","c","d"]; 
+        var letrasB = ["e","f","g","h"];
+        let letras = letrasA.concat(letrasB);
+        console.log(letras);
+
+        for(let i = 0; i < letras.length; i++){
+            console.log(letras[i]);
+        } 
+
+    </script>
+</body>
+
+</html>
