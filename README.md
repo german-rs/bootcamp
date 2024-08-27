@@ -1,2 +1,2 @@
 # Bootcamp
-## Algunos ejercicios de JavaScript
+## Una introducción a JavaScript

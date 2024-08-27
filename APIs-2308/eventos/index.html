@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <!-- JQuery first -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <p class="resultado"></p>
+        <select name="pais" id="pais">
+            <option value="Argentina">Argentina</option>
+            <option value="Perú">Perú</option>
+            <option value="Chile">Chile</option>
+            <option value="Venezuela">Venezuela</option>
+        </select>
+    </div>
+
+    <br><br><br>
+    <div>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+            <li>item 4</li>
+            <li>item 5</li>
+            <li>item 6</li>
+        </ul>
+        <button id="btn">Seleccionar</button>
+    </div>
+
+    <br><br><br>
+    <div>
+        <h3>Clic en la imagen</h3>
+        <img height="100px" id="ejemplo"
+            src="https://as1.ftcdn.net/v2/jpg/03/03/22/26/1000_F_303222627_wcPXTwFoDU4piZSWk9DGqM129H1vCcAy.jpg"
+            alt="click" />
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#pais").change(function () {
+                let seleccion = $(this).children("option:selected").val();
+                // console.log($(this));
+                console.log(seleccion);
+
+                $(".resultado").text(seleccion);
+            });
+
+
+            //FormOn
+            $("#btn").on("click", function () {
+                // alert("hola")
+                $("li").filter(":even").css("backgroundColor", "red");
+            });
+
+
+            let contador = 0;
+            $("#ejemplo").on("click", function(){
+                contador++;
+                console.log("Click" +contador);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

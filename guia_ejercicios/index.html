@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Guía de ejercicios JQuery</title>
+</head>
+
+<body>
+    <!-- Ejercicio 1.  -->
+    <button id="button">Aceptar</button>
+
+    <!-- Ejercicio 2.  -->
+    <h1 id="titulo_1">Este es un documento HTML con JavaScript</h1>
+    <h2 id="titulo_2">Este es un documento HTML con JavaScript</h2>
+    <p>El texto <span id="texto_1">indicado</span> fue seleccionado</p>
+    <button id="btn">Enviar 2</button>
+
+    <!-- Ejercicio 3.  -->
+    <h1 class="titulosE3">Este es un documento HTML con JavaScript</h1>
+    <h2 class="titulosE3">Este es un documento HTML con JavaScript</h2>
+    <p>El texto <span class="titulosE3">indicado</span> fue seleccionado</p>
+    <button class="titulosE3">Enviar</button>
+
+    <!-- Ejercicio 4.  -->
+    <ul class="todos">
+        <li>Item 1</li>
+        <li>Item 2
+            <ul>
+                <li>Nested item 1</li>
+                <li>Nested item 2</li>
+                <li>Nested item 3</li>
+            </ul>
+        </li>
+        <li>Item 3</li>
+    </ul>
+
+    <!-- Ejercicio 5.  -->
+    <ul class="todos5">
+        <li>Item 1</li>
+        <li>Item 2
+            <ul>
+                <li>Nested item 1</li>
+                <li>Nested item 2</li>
+                <li>Nested item 3</li>
+            </ul>
+        </li>
+        <li>Item 3</li>
+    </ul>
+
+    <!-- Ejercicio 6.  -->
+    <ul class="ejercicio6">
+        <li>uno</li>
+        <li>dos</li>
+        <li>tres</li>
+        <li>cuatro</li>
+        <li>cinco</li>
+    </ul>
+
+    <!-- Ejercicio 7.  -->
+    <input type="email" />
+
+    <script>
+
+        /**
+         *  7.- Escriba un filtro form para el siguiente elemento.
+        */
+        let entrada = $('input [type="email"]');
+        console.log(entrada);
+
+        /**
+         *  6.- Utilizando el filtro hijo nth-child, selecciona el segundo 
+         *  elemento de la lista agregando un color de fondo azul.
+        */
+        let itemDos = $("ul.ejercicio6 > li:nth-child(2)");
+        itemDos.css("background-color", "blue");
+
+
+
+        /**
+         *  5.- Para el siguiente HTML, selecciona mediante los filtros 
+         *  de posición el primer y último <li> perteneciente a la clase 
+         *  denominada “todos5”, añadiendo un color al texto a los elementos 
+         *  seleccionados, en este caso debe ser el color rojo.
+        */
+        let itemFirst = $("ul.todos5 > li > ul > li:first");
+        itemFirst.css("color", "red");
+
+        let itemLast = $("ul.todos5 > li > ul > li:last-child");
+        itemLast.css("color", "red");
+
+        //Tambien.
+        //$('ul.todos > li:eq(0) ').css('color', 'red'); 
+        // $('ul.todos > li:eq(2) ').css('color', 'red');    
+
+
+        /**
+         *  4.- Para el siguiente HTML, selecciona mediante los elementos 
+         *  generales todos los <li> que tienen el texto “Nested item”. 
+         *  Igualmente, añade un color al texto, en este caso debe ser el 
+         *  color rojo.
+        */
+        let item = $("ul.todos > li > ul > li ");
+        item.css("color", "red");
+
+        /**
+         *  3.- Selecciona, almacena en variables y muestra cada una de 
+         *  ellas para los elementos HTML mediante los selectores del tipo 
+         *  clase de jQuery.
+        */
+        let titulosE3 = $(".titulosE3");
+        console.log(titulosE3);
+  
+
+        /**
+         *  2.- Selecciona, almacena en variables y muestra cada una de 
+         *  ellas para los elementos HTML mediante los selectores del tipo 
+         *  id de jQuery.
+        */
+        let titulo1 = $("#titulo_1");
+        let titulo2 = $("#titulo_2");
+        let texto1 = $("#texto_1");
+        let btn = $("#btn");
+        console.log(titulo1);
+        console.log(titulo2);
+        console.log(texto1);
+        console.log(btn);
+
+
+        /**
+         *  1.- Transforma el siguiente código de JS a JQuery.
+        */
+        let button = document.getElementById('button');
+        button.addEventListener('click', function () {
+            alert("click sobre el botón");
+        });
+
+        let Jbutton = $("#button");
+        Jbutton.on("click", function () {
+            alert("click sobre el botón (Jquery)");
+        });
+
+    </script>
+</body>
+
+</html>
