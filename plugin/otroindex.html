@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script>
+        window.onload = function () {
+            var options = {
+                title: {
+                    text: "Gráfico de columnas con jQuery CanvaJS"
+                },
+                axisX: {
+                    title: "Frutas Tropicales",
+                    titleFontSize: "12",
+                },
+                axisY: {
+                    title: "Consumo Kg/persona/Año",
+                    titleFontSize: "12",
+                },
+                data: [
+                    {
+                        type: "column",
+                        dataPoints: [
+                            { label: "Manzana", y: 10 },
+                            { label: "Pera", y: 15 },
+                            { label: "Naranja", y: 20 },
+                            { label: "Uva", y: 25 },
+                            { label: "Sandia", y: 30 },
+                        ]
+
+                    }
+                ]
+
+            }
+
+            $("#chartContainer").CanvasJSChart(options);
+
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var dataPoints = [];
+            var options = {
+                animationEnabled: true,
+                theme: "light2",
+                title: {
+                    text: "Daily Sales Data",
+                },
+                axisX: {
+                    valueFormatString: "DD MMM YYYY",
+                },
+                axisY: {
+                    title: "USD",
+                    titleFontSize: 24,
+                },
+                data: [
+                    {
+                        type: "spline",
+                        dataPoints: dataPoints,
+                    },
+                ],
+            };
+
+            $.ajax({
+                url:"https://mindicador.cl/api/dolar",
+                type:"GET",
+                dataType: "json",
+                success: function(data){
+                    let datosApi = data.serie;
+                    for(let i = 0; i < datosApi.length; i++){
+                        dataPoints.push({
+                            x: new Date(datosApi[i].fecha),
+                            y: datosApi[i].valor
+                        })
+                    }
+                    $("#chartContainer").CanvasJSChart(options);
+                },
+                error:function(error){
+                    console.error(error);
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
