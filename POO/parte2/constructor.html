@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <script>
+        function Estudiante(nombreRecibido){
+            this.nombre = nombreRecibido;
+        }
+
+        let estudiante1= new Estudiante('Javiera');
+        let estudiante2= new Estudiante('Francisco');
+        let estudiante3= new Estudiante('Diana');
+
+        console.log(estudiante1);
+        console.log(estudiante2);
+        console.log(estudiante3);
+
+        estudiante1.saludar = function(){
+            console.log('Hola soy ' + this.nombre);
+        }
+
+        estudiante1.saludar();
+
+        estudiante2.decirNombre = function(){
+            console.log('Mi nombre es ' + this.nombre);
+        }
+
+        estudiante2.decirNombre();
+
+    </script>
+</body>
+</html>

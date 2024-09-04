@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardinalidad</title>
+</head>
+<body>
+    <script>
+        function Persona(nombre, mascota){
+            this.nombre = nombre;
+            this.mascota = mascota;
+        }
+
+        function Mascota(nombre){
+            this.nombre = nombre;
+        }
+
+        let mascota1 = new Mascota('Pelusa');
+        let persona1 = new Persona('Julian', mascota1);
+
+        console.log(persona1);
+        console.log(mascota1);
+
+        console.log(persona1.mascota);
+
+
+
+    </script>
+</body>
+</html>

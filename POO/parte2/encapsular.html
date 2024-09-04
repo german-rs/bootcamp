@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Estudiante(nombre){
+            this.nombre = nombre;
+        }
+
+        let estudiante1 = new Estudiante('Juan');
+        console.log(estudiante1.nombre);
+
+        // Mala practica (se debe encapsular).    
+        estudiante1.nombre = 'Javier';
+        console.log(estudiante1.nombre);
+
+        /***
+         * 
+         *  Encapsulamiento.
+         */ 
+
+        function Vehiculo(marca){
+            var _marca = marca;
+
+            Object.defineProperty(this, '_getMarca',{
+                get: function(){
+                    return _marca;
+                }
+            });
+
+            Object.defineProperty(this, '_setMarca',{
+                set: function(marca){
+                    _marca = marca;
+                }
+            });
+        } 
+        
+
+        Vehiculo.prototype.getMarca = function(){
+            return this._getMarca;
+        }
+
+        Vehiculo.prototype.setMarca = function(marca){
+            this._setMarca = marca;
+        }
+
+        let vehiculo1 = new Vehiculo("ford");
+        console.log(vehiculo1.getMarca());
+
+        vehiculo1.setMarca("Honda");    
+        console.log(vehiculo1.getMarca());
+
+
+
+
+    </script>
+</body>
+</html>

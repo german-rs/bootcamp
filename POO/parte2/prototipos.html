@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Cuadrado(lado){
+            this.lado = lado;
+        }
+
+        Cuadrado.prototype.calcularArea = function(){
+            return this.lado * this.lado;
+        }
+
+        Cuadrado.prototype.calcularPerimetro = function(){
+            return this.lado * 4;
+        }
+
+        let cuadrado1 = new Cuadrado(2);
+        
+        console.log(cuadrado1);
+        console.log(cuadrado1.calcularArea());
+        console.log(cuadrado1.calcularPerimetro());
+    </script>
+</body>
+</html>
