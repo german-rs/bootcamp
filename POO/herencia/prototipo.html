@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        let persona_uno = {
+            nombre: 'John',
+            saludar: function(){
+                console.log('Hola me llamo, ' + this.nombre);
+            }
+        }
+
+        console.log(persona_uno);
+        let persona_dos = Object.create(persona_uno);
+        console.log(persona_dos);
+
+    </script>
+</body>
+</html>

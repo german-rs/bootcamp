@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    class Universo{
+        constructor (universo){
+            this.universo = universo;
+        }
+    }
+
+    class Springfield extends Universo{
+        constructor(universo, nombreGrupo){
+            super(universo);
+            this.nombreGrupo = nombreGrupo;
+
+        }
+    }
+
+    class FamiliaSimpson extends Springfield{
+        constructor(universo, nombreGrupo, rol, nombre){
+            super(universo, nombreGrupo);
+            this.rol = rol;
+            this.nombre =  nombre;
+        }
+
+        datosFamiliaSimpson(){
+            return `Mi rol ${this.rol} y mi nombre es ${this.nombre}`;
+        }
+    }
+
+    class NoFamiliaSimpson extends Springfield{
+        constructor(universo, nombreGrupo, ocupacion, nombre){
+            super(universo, nombreGrupo);
+            this.ocupacion = ocupacion;
+            this.nombre = nombre;
+        }
+
+        datosNoFamiliaSimpson(){
+            return `Mi ocupacion es ${this.ocupacion} y mi nombre es ${this.nombre}, soy del grupo ${this.nombreGrupo} en el universo ${this.universo}`;
+        }
+    }
+
+    let homero = new FamiliaSimpson("Canon", "Familia Simpson", "Padre", "Homero Simpson");
+
+    let nedFlanders = new NoFamiliaSimpson("Canon", "No familia Simpson", "Dueño de la tienda de articulos para zurdos", "Ned Flanders");
+
+    console.log(homero);
+    console.log(homero.datosFamiliaSimpson());
+
+    console.log(nedFlanders);
+    console.log(nedFlanders.datosNoFamiliaSimpson());
+  </script>
+</body>
+</html>

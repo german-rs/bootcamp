@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES5.
+        function FiguraGeometrica(lado) {
+            this.lado = lado;
+        }
+
+        function Poligono(lado) {
+            FiguraGeometrica.call(this, lado);
+        }
+
+        Poligono.prototype = Object.create(FiguraGeometrica.prototype);
+        Poligono.prototype.constructor = Poligono;
+
+        Poligono.prototype.calcularArea = function () {
+            return this.lado * this.lado;
+        }
+
+        var poligono = new Poligono(5);
+        console.log(poligono);
+        console.log(poligono.calcularArea());
+
+    </script>
+
+    <script>
+        //ES6.
+        class FiguraGeometrica {
+            constructor(lado) {
+                this.lado = lado
+            }
+        }
+
+        class Poligono extends FiguraGeometrica {
+            constructor(lado) {
+                super(lado)
+            }
+
+            calcularArea() {
+                return this.lado * this.lado
+            }
+        }
+
+        var poligono = new Poligono(5)
+        console.log(poligono)
+        console.log(poligono.calcularArea())
+    </script>
+</body>
+
+</html>

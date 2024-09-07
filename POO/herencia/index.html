@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+</head>
+<body>
+    <script>
+     class Vehiculo{
+        constructor(marca, color, matricula){
+            this._marca = marca;
+            this._color = color;
+            this._matricula = matricula;
+        }
+     }
+
+     class Coche extends Vehiculo{
+        constructor(marca, color, matricula){
+            super(marca, color, matricula);
+        }
+     }
+
+     class Moto extends Vehiculo{
+        constructor(marca, color, matricula){
+            super(marca, color, matricula);
+        }
+     }
+
+     class Bus extends Vehiculo{
+        constructor(marca, color, matricula){
+            super(marca, color, matricula);
+        }
+     }
+
+     let coche1 = new Coche('Toyota', 'rojo', '123456');
+     let moto1 = new Moto('Honda', 'verde', '654321');
+     let bus1 = new Bus('Mercedez', 'blanco', '987654');
+
+     console.log(coche1);
+     console.log(moto1);
+     console.log(bus1);
+
+     console.log(coche1._marca);
+    </script>
+</body>
+</html>
