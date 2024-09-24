@@ -33,7 +33,21 @@ const userId = 1;
 
 Promise.all([getUsers(userId), getPost(userId)]).then(
     resp => {
-        console.log('Respuesta', resp);
+        //console.log('Respuesta', resp);
+        const user = resp[0];
+        const posts = resp[1];
+        console.log(user);
+        console.log(user.name);
+        console.log(user.address.city);
+        console.log(posts);
+
+        posts.forEach(post => {
+            // console.log(post);
+            console.log(post.id);    
+            console.log(post.title);    
+            console.log(post.body);  
+            console.log('--------');  
+        });
     }
 ).catch(
     error =>{
