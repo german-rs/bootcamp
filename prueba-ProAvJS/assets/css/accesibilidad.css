@@ -1,0 +1,31 @@
+/* 
+    Nombre estudiante: Germán A. Riveros Sepúlveda.
+    Generación: 14.
+    Jornada: Vespertina.   
+    Prueba: Programación avanzada en JavaScript.
+*/
+
+.menu__accesibilidad{
+    position: fixed;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%);
+    z-index: 1000;
+    background-color: #ffc107;
+    width: 300px;
+    height: 50px;
+    border-bottom-left-radius: 10px;  
+    border-bottom-right-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.gray-scale {
+    filter: grayscale(100%);
+}
+
+.material-symbols-outlined {
+    cursor: pointer;
+}
